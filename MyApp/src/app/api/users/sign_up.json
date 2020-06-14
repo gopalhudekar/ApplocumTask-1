@@ -1,0 +1,27 @@
+{
+    "user":[
+        {
+            "email": "",
+            "password":"",
+            "first_name" :"",
+            "last_name" :"",
+            "phone" :""
+
+        },
+        {
+            "email": "gopal@gmail.com",
+            "password":"gopal123",
+            "first_name" :"Gopal",
+            "last_name" :"Hudekar",
+            "phone" :"9637518146"
+
+        }
+    ],
+
+    "device_detail":[
+        {
+            "device_type":"",
+            "player_id":""
+        }
+    ]
+}
