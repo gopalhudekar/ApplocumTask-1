@@ -1,28 +1,37 @@
+<div class="row"> 
+<div class="col-6"  *ngIf="cart.length>0"> <h3>Cart List</h3> </div>
+<div  class="col-6"  *ngIf="!(cart.length>0)"> Cart is Empty </div>
+<div class="col-6" > <button > Cart Qty
+        {{cartCount}} 
 
-<div> <h3>Cart List</h3> </div>
+        Cart Value = {{total | currency:"&#8377;"}} <br>
+        <button class="btn btn-primary" >Proceed Payment</button>
+        </button>
+ </div>
+</div>
 <div class="card mt-4" *ngFor="let item of items">
   
     <div class="card-body">
         <div class="row">
-            <div class="col-8">
-                    <h4>{{item.product.Name}}</h4>
+            <div class="col-4">
+                    <h6>{{item.product.Name}}</h6>
             </div>
             <div class="col-4">
-                    <h4>{{item.product.price | currency:"&#8377;"}}</h4>
+                    <h6>{{item.product.price | currency:"&#8377;"}}</h6>
             </div>
         </div>
        
                 <div class="row">
-                        <h6>{{item.product.Location}}</h6>
+                        <p>{{item.product.Location}}</p>
                 </div>
             <div class="row">
                 <div class="col-6">
-                        <h4>Total = {{item.product.price * item.quantity}}</h4>
+                        <h6>Total = {{item.product.price * item.quantity}}</h6>
                 </div>
             
             <div class="col-6 row"v>
                     <button class="col-1 " *ngIf="item.quantity>0"  (click)="decrementQty(item)"  class="btn btn-primary"> -</button>
-                    <h4 class="col-3 "> {{item.quantity}} </h4>
+                    <h6 class="col-3 "> {{item.quantity}} </h6>
                     <button class="col-1 " *ngIf="item.product.qty>0" (click)="incrementQty(item)" class="btn btn-primary" >+</button>
             </div>
               

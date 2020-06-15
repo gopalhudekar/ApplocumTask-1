@@ -8,7 +8,9 @@ import { fakeBackendProvider } from './backend';
 
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
-
+ 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyInterceptor, ErrorInterceptor } from './backend';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';;
@@ -20,7 +22,13 @@ import { CartComponent } from './cart/cart.component'
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        appRoutingModule
+        appRoutingModule,
+         BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            timeOut: 10000,
+            positionClass: 'toast-bottom-right',
+            preventDuplicates: true,
+          }),
     ],
     declarations: [
         AppComponent,

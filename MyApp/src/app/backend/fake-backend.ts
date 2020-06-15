@@ -3,7 +3,7 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import sign_up from '../api/users/sign_up.json';
-
+//const fs = require('fs')
  let users = sign_up.user;
  users = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -58,7 +58,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
            // user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
             users.push(user);
             localStorage.setItem('users', JSON.stringify(users));
-
+            // fs.writeFile('../api/users/sign_up.json', JSON.stringify(users), (err) => {
+            //     if (err) console.log('Error writing file:', err)
+            // });
+        
             return ok( { status: 200,  message: 'Success' });
 
                 }
@@ -72,7 +75,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 email: user.email,
                 first_name: user.first_name,
                 last_name: user.last_name,
-                token: 'bearer toke.xyz'
+                token: 'token.xyz'
             })
         }
 

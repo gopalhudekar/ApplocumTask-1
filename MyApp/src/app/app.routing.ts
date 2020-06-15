@@ -6,10 +6,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthGuard } from './backend';
 import{CartComponent} from './cart/cart.component'
 const routes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'sign-up', component: SignUpComponent },
-    { path: 'cart', component: CartComponent },
+    { path: 'cart', component: CartComponent,  canActivate: [AuthGuard] },
 
 
 

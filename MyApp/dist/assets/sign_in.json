@@ -1,0 +1,21 @@
+{
+    "user":[
+        {
+            "email": "",
+            "password":"",
+            
+        }
+        {
+            "email": "gopal@gmail.com",
+            "password":"gopal123",
+            
+        }
+    ],
+
+    "device_detail":[
+        {
+            "device_type":"",
+            "player_id":""
+        }
+    ]
+}
